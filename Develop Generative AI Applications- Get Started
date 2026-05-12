@@ -55,7 +55,8 @@ reviews = [
 ]
 
 # TODO: Process the reviews
-for review in reviews:
-    response = review_analysis_chain.invoke({"review" : review})
-    print("Answer: " , response)
-    print()    
+for i, review in enumerate(reviews):
+    print(f"==== Review #{i+1} ====")
+    result = review_analysis_chain.invoke({"review": review})
+    print(result)
+    print()   
